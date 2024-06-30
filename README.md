@@ -1,5 +1,4 @@
 # Design Pattern
-=====================================
 
 This repository contains implementations of various design patterns in [programming language(s) to be specified].
 ## Patterns Implemented
