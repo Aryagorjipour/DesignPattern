@@ -11,8 +11,8 @@ The Observer pattern defines a one-to-many dependency between objects so that wh
 
 * **Subject** (WeatherStation): The object being observed, which maintains a list of observers and notifies them when its state changes.
 * **Observer** (DisplayBoard, ForecastSystem): The objects that observe the subject and react to changes in its state.
-* **register()**: Method to add an observer to the subject's list of observers.
-* **unregister()**: Method to remove an observer from the subject's list of observers.
+* **Attach()**: Method to add an observer to the subject's list of observers.
+* **DeAttach()**: Method to remove an observer from the subject's list of observers.
 * **notify()**: Method to notify all observers of a change in the subject's state.
 
 **Implementation Details**
@@ -24,12 +24,16 @@ This implementation provides a `WeatherStation` class that acts as the subject, 
 Here are the UML diagrams for the implementation using the Mermaid framework:
 ```mermaid
 classDiagram
-    class WeatherStation {
+    class Subject {
+        <<abstract>>
         -_observers: List<IObserver>
         -_weatherCondition: string
-        +registerObserver(IObserver)
-        +unregisterObserver(IObserver)
-        +notifyObservers()
+        +Attach(IObserver)
+        +DeAttach(IObserver)
+        +Notify()
+    }
+    
+    class WeatherStation {
         +setWeatherCondition(string)
     }
 
@@ -48,8 +52,9 @@ classDiagram
         +update(string)
     }
 
-    WeatherStation --> IObserver : observes
+    Subject --> IObserver : observes
     WeatherStation --> DisplayBoard : observes
     WeatherStation --> ForecastSystem : observes
+    Subject <|-- WeatherStation
     IObserver <|-- DisplayBoard
     IObserver <|-- ForecastSystem
