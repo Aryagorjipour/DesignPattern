@@ -1,10 +1,10 @@
 # Design Pattern
-=====================
+=====================================
 
 This repository contains implementations of various design patterns in [programming language(s) to be specified].
 ## Patterns Implemented
 
--    **Observer Pattern**: This pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+-    **[Observer Pattern]**: This pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
 ## Getting Started
 
@@ -18,3 +18,4 @@ If you have any questions or need further clarification on any of the patterns, 
 
 
  [Arya Gorjipour]: <https://github.com/Aryagorjipour>
+ [Observer Pattern]:<https://github.com/Aryagorjipour/DesignPattern/blob/master/ObserverPattern.Sample/README.md>
